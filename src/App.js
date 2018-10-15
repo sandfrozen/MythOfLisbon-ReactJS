@@ -28,7 +28,8 @@ class App extends Component {
     }
   }
 
-  login = () => {
+  login = (event) => {
+    event.preventDefault()
     localStorage.setItem('user', 'tomek')
     this.setState(
       {
@@ -65,7 +66,7 @@ class App extends Component {
             toggleModalLogin={this.toggleModalLogin}
             isOpen={this.state.isOpenModalLogin}
           />
-          { this.state.user && <h1>Hello</h1>}
+          { this.state.user && <h1>Hello {this.state.user}</h1>}
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/about' component={About} />

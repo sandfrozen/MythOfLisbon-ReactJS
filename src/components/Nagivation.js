@@ -20,7 +20,7 @@ class Nagivation extends Component {
   }
 
   componentWillReceiveProps () {
-    if (this.props.user) {
+    if (this.state.isOpen && this.props.user) {
       this.setState({
         isOpen: false
       })
