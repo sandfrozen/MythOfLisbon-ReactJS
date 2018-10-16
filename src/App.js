@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 import NewAccount from './components/NewAccount'
 import ModalLogin from './components/ModalLogin'
 import Error from './components/Error'
-import Nagivation from './components/Nagivation'
+import Navigation from './components/Navigation'
 
 class App extends Component {
   constructor (props) {
@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Fragment>
-          <Nagivation
+          <Navigation
             user={this.state.user}
             toggleModal={this.toggleModalLogin}
             logout={this.logout}

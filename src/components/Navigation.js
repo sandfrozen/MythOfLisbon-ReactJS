@@ -10,7 +10,7 @@ import {
   NavLink
 } from 'reactstrap'
 
-class Nagivation extends Component {
+class Navigation extends Component {
   constructor (props) {
     super(props)
 
@@ -80,7 +80,7 @@ class Nagivation extends Component {
   }
 }
 
-export default Nagivation
+export default Navigation
 
 // const Nagivation = () => {
 //   return (
