@@ -2,10 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
 import NewAccount from './components/NewAccount'
 import ModalLogin from './components/ModalLogin'
+import MyAccount from './components/MyAccount'
 import Error from './components/Error'
 import Navigation from './components/Navigation'
 
@@ -69,9 +68,8 @@ class App extends Component {
           { this.state.user && <h1>Hello {this.state.user}</h1>}
           <Switch>
             <Route path='/' component={Home} exact />
-            <Route path='/about' component={About} />
-            <Route path='/contact' component={Contact} />
             <Route path='/new-account' component={NewAccount} />
+            <Route path='/my-account' component={MyAccount} />
             <Route component={Error} />
           </Switch>
         </Fragment>

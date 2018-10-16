@@ -43,22 +43,19 @@ class Navigation extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>
-              <NavItem>
-                <NavLink tag={Link} to='/about'>
-                  About
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to='/contact'>
-                  Contact
-                </NavLink>
-              </NavItem>
               {this.props.user
-                ? <NavItem onClick={this.props.logout}>
-                  <NavLink>
-                      Logout
-                    </NavLink>
-                </NavItem>
+                ? <Fragment>
+                  <NavItem>
+                    <NavLink className="capitalize" tag={Link} to='/my-account'>
+                        {this.props.user} (account)
+                      </NavLink>
+                  </NavItem>
+                  <NavItem onClick={this.props.logout}>
+                    <NavLink>
+                        Logout
+                      </NavLink>
+                  </NavItem>
+                </Fragment>
                 : <Fragment>
                   <NavItem onClick={this.props.toggleModal}>
                     <NavLink>
