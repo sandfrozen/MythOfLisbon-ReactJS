@@ -5,6 +5,7 @@ class MyAccount extends Component {
     return (
       <div>
         My account
+        {this.props.location.pathname}
       </div>
     );
   }

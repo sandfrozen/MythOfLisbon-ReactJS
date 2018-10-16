@@ -27,22 +27,35 @@ class App extends Component {
     }
   }
 
-  login = (event) => {
+  login = event => {
     event.preventDefault()
     localStorage.setItem('user', 'tomek')
+
     this.setState(
       {
         user: 'tomek'
       },
-      this.toggleModalLogin
+      () => {
+        this.toggleModalLogin()
+        if (window.location.pathname === '/new-account') {
+          window.location.href = '/'
+        }
+      }
     )
   }
 
   logout = () => {
     localStorage.removeItem('user')
-    this.setState({
-      user: null
-    })
+    this.setState(
+      {
+        user: null
+      },
+      () => {
+        if (window.location.pathname !== '/') {
+          window.location.href = '/'
+        }
+      }
+    )
   }
 
   toggleModalLogin = () => {
@@ -65,7 +78,6 @@ class App extends Component {
             toggleModalLogin={this.toggleModalLogin}
             isOpen={this.state.isOpenModalLogin}
           />
-          { this.state.user && <h1>Hello {this.state.user}</h1>}
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/new-account' component={NewAccount} />
